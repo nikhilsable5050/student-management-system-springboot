@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="users")
 public class Users {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,6 +18,10 @@ public class Users {
 
     @Column(nullable = false)
     private boolean active;
+
+    // REQUIRED by JPA
+    public Users() {
+    }
 
     public Long getId() {
         return id;
